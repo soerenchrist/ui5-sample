@@ -1,0 +1,23 @@
+GET http://localhost:4004/odata/v4/books/Books
+
+### Create Book
+POST http://localhost:4004/odata/v4/books/Books
+Content-Type: application/json
+
+{
+    "title": "Harry Potter",
+    "author_ID": "f7448b00-79bd-4211-a950-fa121fdb0711",
+    "pages": 100,
+    "price": 10
+}
+
+### Create Author 
+POST http://localhost:4004/odata/v4/books/Authors
+Content-Type: application/json
+
+{
+    "name": "JK Rowling"
+}
+
+### GET Author 
+GET http://localhost:4004/odata/v4/books/Authors

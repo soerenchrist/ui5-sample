@@ -1,0 +1,102 @@
+@server = http://localhost:4004
+@auth = Authorization: Basic alice:
+
+
+### Books
+# @name Books_GET
+GET {{server}}/odata/v4/books/Books
+{{auth}}
+
+
+### Books
+# @name Books_POST
+POST {{server}}/odata/v4/books/Books
+Content-Type: application/json
+{{auth}}
+
+{
+  "ID": "20124196-daff-4324-93b6-2d38e3a1c676",
+  "title": "title-20124196",
+  "author": {
+    "ID": "27897240-645d-4d46-9f2d-a4c94ca1dfca"
+  },
+  "price": 62.2474337,
+  "pages": 4,
+  "createdAt": "2010-09-10T23:00:00.000Z",
+  "createdBy": "createdBy.bzbxg@example.net",
+  "modifiedAt": "2021-08-27T23:00:00.000Z",
+  "modifiedBy": "modifiedBy.bzbxg@example.com"
+}
+
+
+### Books
+# @name Books_PATCH
+PATCH {{server}}/odata/v4/books/Books/20124196-daff-4324-93b6-2d38e3a1c676
+Content-Type: application/json
+{{auth}}
+
+{
+  "ID": "20124196-daff-4324-93b6-2d38e3a1c676",
+  "title": "title-20124196",
+  "author": {
+    "ID": "27897240-645d-4d46-9f2d-a4c94ca1dfca"
+  },
+  "price": 62.2474337,
+  "pages": 4,
+  "createdAt": "2010-09-10T23:00:00.000Z",
+  "createdBy": "createdBy.bzbxg@example.net",
+  "modifiedAt": "2021-08-27T23:00:00.000Z",
+  "modifiedBy": "modifiedBy.bzbxg@example.com"
+}
+
+
+### Books
+# @name Books_DELETE
+DELETE {{server}}/odata/v4/books/Books/20124196-daff-4324-93b6-2d38e3a1c676
+Content-Type: application/json
+{{auth}}
+
+
+### Authors
+# @name Authors_GET
+GET {{server}}/odata/v4/books/Authors
+{{auth}}
+
+
+### Authors
+# @name Authors_POST
+POST {{server}}/odata/v4/books/Authors
+Content-Type: application/json
+{{auth}}
+
+{
+  "ID": "27897240-645d-4d46-9f2d-a4c94ca1dfca",
+  "name": "name-27897240",
+  "createdAt": "2018-06-14T23:00:00.000Z",
+  "createdBy": "createdBy.glxnc@example.com",
+  "modifiedAt": "2015-07-23T23:00:00.000Z",
+  "modifiedBy": "modifiedBy.glxnc@example.org"
+}
+
+
+### Authors
+# @name Authors_PATCH
+PATCH {{server}}/odata/v4/books/Authors/27897240-645d-4d46-9f2d-a4c94ca1dfca
+Content-Type: application/json
+{{auth}}
+
+{
+  "ID": "27897240-645d-4d46-9f2d-a4c94ca1dfca",
+  "name": "name-27897240",
+  "createdAt": "2018-06-14T23:00:00.000Z",
+  "createdBy": "createdBy.glxnc@example.com",
+  "modifiedAt": "2015-07-23T23:00:00.000Z",
+  "modifiedBy": "modifiedBy.glxnc@example.org"
+}
+
+
+### Authors
+# @name Authors_DELETE
+DELETE {{server}}/odata/v4/books/Authors/27897240-645d-4d46-9f2d-a4c94ca1dfca
+Content-Type: application/json
+{{auth}}
