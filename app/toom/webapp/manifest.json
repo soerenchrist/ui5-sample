@@ -1,0 +1,11 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "toom.frontend",
+    "type": "application",
+    "title": "Toom Frontend",
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
+  }
+}
