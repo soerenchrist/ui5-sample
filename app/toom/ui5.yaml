@@ -19,5 +19,10 @@ server:
       afterMiddleware: compression
     - name: ui5-middleware-serveframework
       afterMiddleware: compression
+    - name: ui5-middleware-simpleproxy
+      afterMiddleware: compression
+      mountPath: /api
+      configuration:
+        baseUri: "http://localhost:4004"
     - name: ui5-middleware-livereload
       afterMiddleware: compression

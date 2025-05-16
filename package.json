@@ -19,7 +19,8 @@
   "scripts": {
     "start": "cds-serve",
     "build": "mbt build",
-    "deploy": "cf deploy mta_archives/toom_sample_1.0.0.mtar"
+    "deploy": "cf deploy mta_archives/toom_sample_1.0.0.mtar",
+    "hybrid": "cds watch --profile hybrid"
   },
   "cds": {
     "sql": {
@@ -29,6 +30,9 @@
       "[production]": {
         "db": "hana",
         "auth": "xsuaa"
+      },
+      "[hybrid]": {
+        "db": "hana"
       }
     }
   }

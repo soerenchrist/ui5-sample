@@ -3,9 +3,69 @@
   "sap.app": {
     "id": "toom.frontend",
     "type": "application",
-    "title": "Toom Frontend",
+    "i18n": {
+      "bundleName": "toom.i18n.i18n",
+      "supportedLocales": [
+        ""
+      ],
+      "fallbackLocale": ""
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
     "applicationVersion": {
       "version": "1.0.0"
+    },
+    "dataSources": {
+      "bookRemote": {
+        "uri": "api/odata/v4/books/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "4.0"
+        }
+      }
     }
-  }
-}
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "dependencies": {
+        "minUI5Version": "1.120",
+        "libs": {
+            "sap.ui.core": {},
+            "sap.m": {}
+        }
+    },
+    "rootView": {
+        "viewName": "toom.view.App",
+        "type": "XML",
+        "id": "app"
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "models": {
+        "i18n": {
+            "type": "sap.ui.model.resource.ResourceModel",
+            "settings": {
+                "bundleName": "toom.i18n.i18n",
+                "supportedLocales": [
+                    ""
+                ],
+                "fallbackLocale": ""
+            }
+        },
+        "books": {
+          "dataSource": "bookRemote"
+        }
+    }
+}}
