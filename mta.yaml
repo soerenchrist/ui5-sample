@@ -10,6 +10,7 @@ build-parameters:
       commands:
         - npm ci
         - npx cds build --production
+
 modules:
   - name: toom_sample-srv
     type: nodejs
@@ -34,12 +35,48 @@ modules:
     requires:
       - name: toom_sample-db
 
+  - name: toom_sample-frontend
+    type: html5
+    path: ./app/toom
+    build-parameters:
+      build-result: dist
+      builder: custom
+      commands:
+        - npm run build
+      supported-platforms: []
+
+  - name: toom_sample-frontend-deployer
+    # type: com.sap.html5.application-content for plain contents without zip
+    type: com.sap.application.content
+    path: ./app/toom
+    requires:
+      - name: toom-html-repo-host
+        parameters:
+          content-target: true
+    build-parameters:
+      build-result: resources
+      requires:
+        - name: toom_sample-frontend
+          artifacts:
+            - toom-frontend.zip
+          target-path: resources/
+
 resources:
   - name: toom_sample-db
     type: com.sap.xs.hdi-container
     parameters:
       service: hana
       service-plan: hdi-shared
+  - name: toom-html-repo-host
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: html5-apps-repo
+      service-plan: app-host
+  - name: toom-html-repo-runtime
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: html5-apps-repo
+      service-plan: app-runtime
   - name: toom_sample-auth
     type: org.cloudfoundry.managed-service
     parameters:
