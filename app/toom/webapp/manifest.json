@@ -1,7 +1,7 @@
 {
   "_version": "1.65.0",
   "sap.app": {
-    "id": "toom.frontend",
+    "id": "toom",
     "type": "application",
     "i18n": {
       "bundleName": "toom.i18n.i18n",
@@ -10,14 +10,14 @@
       ],
       "fallbackLocale": ""
     },
-    "title": "{{appTitle}}",
-    "description": "{{appDescription}}",
+    "title": "Toom Sample",
+    "description": "Example frontend for toom",
     "applicationVersion": {
       "version": "1.0.0"
     },
     "dataSources": {
       "bookRemote": {
-        "uri": "api/odata/v4/books/",
+        "uri": "/odata/v4/books/",
         "type": "OData",
         "settings": {
           "odataVersion": "4.0"
