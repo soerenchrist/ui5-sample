@@ -11,12 +11,10 @@ framework:
     - name: themelib_sap_horizon
 builder:
   customTasks:
-    - name: ui5-tooling-transpile-task
-      afterTask: replaceVersion
     - name: ui5-task-zipper
       afterTask: generateCachebusterInfo
       configuration:
-        archiveName: toom-frontend
+        archiveName: toom
 server:
   customMiddleware:
     - name: ui5-middleware-serveframework
