@@ -42,3 +42,9 @@ builder:
         debug: true
         transformModulesToUI5:
           overridesToOverride: true
+    - name: ui5-task-zipper
+      afterTask: generateCachebusterInfo
+      configuration:
+        archiveName: toom_frontend
+        additionalFiles:
+          - xs-app.json
